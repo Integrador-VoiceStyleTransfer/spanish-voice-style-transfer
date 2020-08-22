@@ -6,7 +6,7 @@
 
 ## Abstract
 
-Voice conversion is a growing field of study with the arrival of Deep Neural Network architectures that allow to transfer the voice of a source speaker to a target speaker. Most of these architectures have been tested in English. In this report we compare, through perceptual measures, the performance of a model when performing voice style transfers in Spanish using three different schemas: training it with both English and Spanish audios, fine-tuning English-learned weights with Spanish audios and finally, training the model just with Spanish audios. We also explore speaker similarity measures based on euclidean distance and Kullback-Leibler divergence to try explain the variations observed in the voice conversions between different speakers. Aditionally, we describe the application that we built to expose the best model as a web service. We conclude that for a better voice style transfer in Spanish, it is necessary to train this model directly with audios in Spanish.
+Voice conversion is a growing field of study with the arrival of Deep Neural Network architectures that allow to transfer the voice of a source speaker to a target speaker. Most of these architectures have been tested in English. In this report we compare, through perceptual measures, the performance of a model when performing voice style transfers in Spanish using three different schemas: training it with both English and Spanish audios, fine-tuning English-learned weights with Spanish audios and finally, training the model just with Spanish audios. We also explore speaker similarity measures based on euclidean distance and Kullback-Leibler divergence to try to explain the variations observed in the voice conversions between different speakers. Aditionally, we describe the application that we built to expose the best model as a web service. We conclude that for a better voice style transfer in Spanish, it is necessary to train the selected model directly with audios in Spanish.
 
 ## Methods
 
@@ -14,13 +14,13 @@ Voice conversion is a growing field of study with the arrival of Deep Neural Net
 We choosed to work with the architecture proposed by [1], due to its capacity  to work with audios without transcription. Also, the authors published their [original implementation](https://github.com/jjery2243542/voice_conversion), making it easier for us to test and evaluate the architecture.
 
 ### Speakers similarity
-As we experimented with the architecture, we noticed that there were performance variations depending on the source and target speakers, so we tought that it could be explained with the speakers similarity.
+As we experimented with the architecture, we noticed that there were performance variations depending on the source and target speakers, so we tought that it could be explained through the speakers voice similarity.
 
 #### Measurement based on euclidean distance:
-We used the method proposed by [3], using the audio MFCC as the characteristic vector.
+We used the method proposed by [3], using the audio MFCC as the characteristics vector.
 
  #### Measurement based on Kullback-Leibler divergence:
-  We trained an UBM with all the audios. The UBM was built as a GMM and then we adapted the means vector using a MAP estimation [4]. After that, we calculated the distance between each speaker's probability distribution using the Symmetric Kullback-Leibler Divergence, defined as:
+  We trained an UBM with all the audios in English. The UBM was built as a GMM and then we adapted the means vector to the Spanish speakers using a MAP estimation [4]. After that, we calculated the distance between each speaker's probability distribution using the Symmetric Kullback-Leibler Divergence, defined as:
 
 ![](./src/img/eq1.png)
 
@@ -33,7 +33,7 @@ Where D(λ1, λ2) is the Kullback-Leiber divergence, given by
 
 ### Model development and deployment
 
-The project setup has a frontend developed in Angular and deployed using AWS Amplify. We used the frontend to show information about our project, gather users opinions and expose the voice conversion service. The survey answers are stored into a MongoDB Atlas via a Node.js backend deployed on Heroku Dyno, and the voice conversion service was developed in FastAPI and deployed on a GCP Compute Engine with a Tesla T4 GPU. This service uses the model and audios from an AWS S3 bucket.
+The project setup has a frontend developed in Angular and deployed using AWS Amplify. We used the frontend to show information about our project, gather users opinions and expose the voice conversion service. The survey answers are stored into a MongoDB Atlas via a Node.js backend deployed on Heroku Dyno, and the voice conversion service was developed using FastAPI and deployed on a GCP Compute Engine with a Tesla T4 GPU. This service uses the model and audios from an AWS S3 bucket.
 
 ![](./src/img/infraestructura.png)\
 *Fig 1: web application infraestructure*
@@ -41,14 +41,14 @@ The project setup has a frontend developed in Angular and deployed using AWS Amp
 ## Experiments
 
 ### Database
-To train our models we used the corpus provided by [2] and about 1200 audios recorded in Spanish by three members of our team.
+To train our models we used the corpus provided by [2] and three members of our team recorded 400 audios in Spanish each one.
 
 ### Experimental phase
 We trained four models to compare them and find which approximation brings the best results when performing a voice style transfer in Spanish.
 
 - **M-Chou:** The first model was a replica of the training shown at [1]. We tried to get familiar with the implementation with this experiment.
 
-- **M-Chou+3:** The second model was trained using using audios in English and in Spanish as well. With this mixed dataset we tried to check if the model was able to extract features from the audios in English and take advantage of these feature to improve the Spanish 
+- **M-Chou+3:** The second model was trained using audios in English and in Spanish as well. With this mixed dataset we tried to check if the model was able to extract features from the audios in English and take advantage of these features to improve the Spanish style transfers.
 
 - **M-3SS:** The third model was trained using just the audios in Spanish. We tried to check if the model was able to extract enough features from a few speakers.
 
