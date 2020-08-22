@@ -83,7 +83,7 @@ After some data cleaning, we collected 591 valid evaluations.
 
 ## Results
 
-The movel M-3SS achieved the best perfermance in every single evaluated characteristic, as it can be seen in the following figure. The models which were trained with English and Spanish audios (M-TL and M-Chou+3) improved significantly the voice style transfer performance.
+The model M-3SS achieved the best perfermance in every single evaluated characteristic, as it can be seen in the following figure. The models which were trained with English and Spanish audios (M-TL and M-Chou+3) improved significantly the voice style transfer performance.
 
 ![](./src/img/modelo.png)\
 *Fig 4: performance per model*
