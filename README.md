@@ -35,7 +35,7 @@ Where D(λ1, λ2) is the Kullback-Leiber divergence, given by
 
 The project setup has a frontend developed in Angular and deployed using AWS Amplify. We used the frontend to show information about our project, gather users opinions and expose the voice conversion service. The survey answers are stored into a MongoDB Atlas via a Node.js backend deployed on Heroku Dyno, and the voice conversion service was developed in FastAPI and deployed on a GCP Compute Engine with a Tesla T4 GPU. This service uses the model and audios from an AWS S3 bucket.
 
-![](./src/img/infraestructura.png)
+![](./src/img/infraestructura.png)\
 *Fig 1: web application infraestructure*
 
 ## Experiments
@@ -73,12 +73,12 @@ a person or by a machine?
 
 To improve users experience while taking the survey, we developed a web UI to collect the characteristics score.
 
-![](./src/img/encuesta.png)
+![](./src/img/encuesta.png)\
 *Fig 2: survey user interface*
 
 After some data cleaning, we collected 591 valid evaluations.
 
-![](./src/img/recuento-respuestas.png)
+![](./src/img/recuento-respuestas.png)\
 *Fig 3: number of valid evaluations per model*
 
 ## Results
@@ -89,15 +89,15 @@ The movel M-3SS achieved the best perfermance in every single evaluated characte
 
 To evaluate if the performance was affected by the speakers voice similarity or not, we measured the distance between the 3 speakers that recorded the training samples and 3 unseen speakers. We expected to see, for example, a low distance between León and the new speakers, because when we performed some transfers using them as source speakers we felt that León had the best performance of all target speakers, but we noticed a different behavior.
 
-![](./src/img/distancia-ubm.png)
+![](./src/img/distancia-ubm.png)\
 *Fig 4a: Speaker-verification-based distance between speakers*
 
-![](./src/img/ED_Sound_Paper.png)
+![](./src/img/ED_Sound_Paper.png)\
 *Fig 4b: Euclidean distance between speakers*
 
 Instead of that, we can see a distance near to zero between Angelower and Jose & Carlos Daniel in the Fig 4a, while the distance between Angelower and León is much bigger. In the Gabriel's case we can notice a similar distance between him and León & Carlos Daniel in the figure 4b,  but in the figura 4a they have very different values. Due to this behavior, we can't explaint the observed performance variaton in the model for each target speaker, that can be seen in the figure 5.
 
-![](./src/img/speaker.png)
+![](./src/img/speaker.png)\
 *Fig 5: Performance per target speaker*
 
 ## Conclusions
