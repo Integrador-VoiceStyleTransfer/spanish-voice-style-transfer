@@ -6,7 +6,7 @@
 
 ## Abstract
 
-Voice conversion is a growing field of study with the arrival of Deep Neural Network architectures that allow to transfer the voice of a source speaker to a target speaker. Most of these architectures have been tested in English. In this report we compare, through perceptual measures, the performance of a model when performing voice style transfers in Spanish using three different schemas: training it with both English and Spanish audios, fine-tuning English-learned weights with Spanish audios and finally, training the model just with Spanish audios. We also explore speaker similarity measures based on euclidean distance and Kullback-Leibler divergence to try to explain the variations observed in the voice conversions between different speakers. Aditionally, we describe the application that we built to expose the best model as a web service. We conclude that for a better voice style transfer in Spanish, it is necessary to train the selected model directly with audios in Spanish.
+Voice conversion is a growing field of study with the arrival of Deep Neural Network architectures that allow to transfer the voice of a source speaker to a target speaker. Most of these architectures have been tested in English. In this report we compare, through perceptual measures, the performance of a model when performing voice style transfers in Spanish using three different schemas: training it with audios in both English and Spanish, fine-tuning English-learned weights with audios in Spanish and finally, training the model just with audios in Spanish. We also explore speaker similarity measures based on euclidean distance and Kullback-Leibler divergence to try to explain the variations observed in the voice conversions between different speakers. Aditionally, we describe the application that we built to expose the best model as a web service. We conclude that for a better voice style transfer in Spanish, it is necessary to train the selected model directly with audios in Spanish.
 
 ## Methods
 
@@ -83,7 +83,7 @@ After some data cleaning, we collected 591 valid evaluations.
 
 ## Results
 
-The M-3SS model achieved the best perfermance in every single evaluated characteristic, as it can be seen in the figure 4. The models which were trained with English and Spanish audios (M-TL and M-Chou+3) improved significantly the voice style transfer performance.
+The M-3SS model achieved the best perfermance in every single evaluated characteristic, as it can be seen in the figure 4. The models which were trained with audios in English and Spanish (M-TL and M-Chou+3) improved significantly the voice style transfer performance.
 
 ![](./src/img/modelo.png)\
 *Fig 4: performance per model*
@@ -103,7 +103,7 @@ Instead of that, we can see a distance near to zero between Angelower and Jose &
 
 ## Conclusions
 
-The best performance was achievied by the model that was trained with just Spanish audios, this may be due to the fact that the acoustic, prosody and articulation of the languages are different and the model may have to adjust completely to perform a transfer in a new language. We still need to check if transfer learning can be performed between speakers of the same language when adding a new speaker.
+The best performance was achievied by the model that was trained with just audios in Spanish, this may be due to the fact that the acoustic, prosody and articulation of the languages are different and the model may have to adjust completely to perform a transfer in a new language. We still need to check if transfer learning can be performed between speakers of the same language when adding a new speaker.
 
 The transfers performance may be affected by the audio quality. We could not guarantee that there were the same technical conditions when we recorded the audios in Spanish. That may explain some the performance variations shown in the figure 6. Also, may be that the selected speaker similarity measures were not adequate enough to explain the voice style transfers performance.
 
