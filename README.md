@@ -2,7 +2,7 @@
 
 [@breakermoob](https://github.com/breakermoob), [@josearangos](https://github.com/josearangos), [@cdanmontoya](https://github.com/cdanmontoya) & [@jdariasl](https://github.com/jdariasl)
 
-***Note:** This is a summary, for the full-length version please visit [this (Spanish)](./src/informe.pdf).*
+***Note:** This is a summary, for the full-length version please see [this (Spanish)](./src/informe.pdf).*
 
 ## Abstract
 
