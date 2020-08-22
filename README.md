@@ -2,7 +2,7 @@
 
 [@breakermoob](https://github.com/breakermoob), [@josearangos](https://github.com/josearangos), [@cdanmontoya](https://github.com/cdanmontoya) & [@jdariasl](https://github.com/jdariasl)
 
-***Note:** This is a summary, for the full-length version please visit [this (spanish)](./src/informe.pdf).*
+***Note:** This is a summary, for the full-length version please visit [this (Spanish)](./src/informe.pdf).*
 
 ## Abstract
 
@@ -103,9 +103,9 @@ Instead of that, we can see a distance near to zero between Angelower and Jose &
 
 ## Conclusions
 
-The best performace was achievied by the model that was trained with just Spanish audios, this may be due to the fact that the acoustic, prosody and articulation of the languages are different and the model may have to adjust completely to perform a tranfer in a new language. We still need to check if transfer learning can be performed between speakers of the same language when adding a new speaker.
+The best performance was achievied by the model that was trained with just Spanish audios, this may be due to the fact that the acoustic, prosody and articulation of the languages are different and the model may have to adjust completely to perform a transfer in a new language. We still need to check if transfer learning can be performed between speakers of the same language when adding a new speaker.
 
-The transfers performance may be affected by the audio quality. We could not guarantee that there were the same technical conditions when we recorded the audios in Spanish. That may explain something of the performance variations shown in the figure 6. Also, may be that the selected speaker similarity measures were not adequate enough to explain the voice style transfers performance.
+The transfers performance may be affected by the audio quality. We could not guarantee that there were the same technical conditions when we recorded the audios in Spanish. That may explain some the performance variations shown in the figure 6. Also, may be that the selected speaker similarity measures were not adequate enough to explain the voice style transfers performance.
 
 ## Future work
 
