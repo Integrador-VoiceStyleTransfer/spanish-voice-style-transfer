@@ -85,26 +85,27 @@ After some data cleaning, we collected 591 valid evaluations.
 
 The movel M-3SS achieved the best perfermance in every single evaluated characteristic, as it can be seen in the following figure. The models which were trained with English and Spanish audios (M-TL and M-Chou+3) improved significantly the voice style transfer performance.
 
-![](./src/img/modelo.png)
+![](./src/img/modelo.png)\
+*Fig 4: performance per speaker*
 
 To evaluate if the performance was affected by the speakers voice similarity or not, we measured the distance between the 3 speakers that recorded the training samples and 3 unseen speakers. We expected to see, for example, a low distance between León and the new speakers, because when we performed some transfers using them as source speakers we felt that León had the best performance of all target speakers, but we noticed a different behavior.
 
 ![](./src/img/distancia-ubm.png)\
-*Fig 4a: Speaker-verification-based distance between speakers*
+*Fig 5a: Speaker-verification-based distance between speakers*
 
 ![](./src/img/ED_Sound_Paper.png)\
-*Fig 4b: Euclidean distance between speakers*
+*Fig 5b: Euclidean distance between speakers*
 
-Instead of that, we can see a distance near to zero between Angelower and Jose & Carlos Daniel in the Fig 4a, while the distance between Angelower and León is much bigger. In the Gabriel's case we can notice a similar distance between him and León & Carlos Daniel in the figure 4b,  but in the figura 4a they have very different values. Due to this behavior, we can't explaint the observed performance variaton in the model for each target speaker, that can be seen in the figure 5.
+Instead of that, we can see a distance near to zero between Angelower and Jose & Carlos Daniel in the Fig 5a, while the distance between Angelower and León is much bigger. In the Gabriel's case we can notice a similar distance between him and León & Carlos Daniel in the figure 5b,  but in the figure 5a they have very different values. Due to this behavior, we can't explaint the observed performance variaton in the model for each target speaker, that can be seen in the figure 6.
 
 ![](./src/img/speaker.png)\
-*Fig 5: Performance per target speaker*
+*Fig 6: Performance per target speaker*
 
 ## Conclusions
 
 The best performace was achievied by the model that was trained with just Spanish audios, this may be due to the fact that the acoustic, prosody and articulation of the languages are different and the model may have to adjust completely to perform a tranfer in a new language. We still need to check if transfer learning can be performed between speakers of the same language when adding a new speaker.
 
-The transfers performance may be affected by the audio quality. We could not guarantee that there were the same technical conditions when we recorded the audios in Spanish. That may explain something of the performance variations shown in the figure 5. Also, may be that the selected speaker similarity measures were not adequate enough to explain the voice style transfers performance.
+The transfers performance may be affected by the audio quality. We could not guarantee that there were the same technical conditions when we recorded the audios in Spanish. That may explain something of the performance variations shown in the figure 6. Also, may be that the selected speaker similarity measures were not adequate enough to explain the voice style transfers performance.
 
 ## Future work
 
