@@ -86,7 +86,7 @@ After some data cleaning, we collected 591 valid evaluations.
 The movel M-3SS achieved the best perfermance in every single evaluated characteristic, as it can be seen in the following figure. The models which were trained with English and Spanish audios (M-TL and M-Chou+3) improved significantly the voice style transfer performance.
 
 ![](./src/img/modelo.png)\
-*Fig 4: performance per speaker*
+*Fig 4: performance per model*
 
 To evaluate if the performance was affected by the speakers voice similarity or not, we measured the distance between the 3 speakers that recorded the training samples and 3 unseen speakers. We expected to see, for example, a low distance between León and the new speakers, because when we performed some transfers using them as source speakers we felt that León had the best performance of all target speakers, but we noticed a different behavior.
 
