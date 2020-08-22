@@ -1,4 +1,4 @@
-# A comparative analisis of training schemes for voice style transfer in Spanish
+# A comparative analysis of training schemes for voice style transfer in Spanish
 
 [@breakermoob](https://github.com/breakermoob), [@josearangos](https://github.com/josearangos), [@cdanmontoya](https://github.com/cdanmontoya) & [@jdariasl](https://github.com/jdariasl)
 
